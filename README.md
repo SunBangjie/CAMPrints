@@ -50,14 +50,15 @@ We provide a Jupyter notebook, `Plot_Results.ipynb` for aggregating and visualiz
 ### Visualizing Expected Results. 
 Running all cells in the notebook without any modifications will generate the expected results, displaying ROC curves similar to those in Figure 9 in the full paper.
 ### Visualizing Evaluation Results.
-After Running Experiments. To visualize evaluation results after running the experiments, update the following code in the Jupyter notebook.
+After Running Experiments. To visualize evaluation results after running the experiments, update the following code in the Jupyter notebook. 
+In the third cell:
 ```Python
-In the third cell:if method == "CAMPrints" or method == "MWDCNN":
+if method == "CAMPrints" or method == "MWDCNN":
 # root_folder = "./Expected_Results/..."
 root_folder = "./Evaluation_Results"In the last cell:# for method in ["CAMPrints", "DRUNET", ...]:
-for method in ["CAMPrints", "MWDCNN"]:The code above reflects the necessary modifications.
+for method in ["CAMPrints", "MWDCNN"]:
 ```
-After making these changes, run all cells again to generate the updated plot, which will include results for both CAMPrints and the baseline model (MWDCNN). Note that we do not provide code for the two additional baselines, DRUNET and the Wiener method.
+The code above reflects the necessary modifications. After making these changes, run all cells again to generate the updated plot, which will include results for both CAMPrints and the baseline model (MWDCNN). Note that we do not provide code for the two additional baselines, DRUNET and the Wiener method.
 
 ## Citation
 If **_CAMPrints_** contributes to your work, we would appreciate a citation to our paper.
