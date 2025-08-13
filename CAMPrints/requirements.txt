@@ -1,0 +1,11 @@
+pytorch-wavelets
+PyWavelets
+pandas
+imageio
+opencv-python
+matplotlib
+scikit-image
+scikit-learn
+pytorch-msssim
+tqdm
+numpy==1.26.4
