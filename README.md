@@ -36,22 +36,28 @@ The results will be saved in the folder `Evaluation_Results/`. Different combina
 ```Python
 line 300: list_of_adv_combinations = [ ... ]
 ```
-The complete list of combinations is provided in Table 1. The full evaluation, covering all combinations, is expected to take approximately 10 hours.
+The complete list of combinations is provided in the following Table. The full evaluation, covering all combinations, is expected to take approximately 10 hours.
+
+| Type of Combs. | Combs. of Ops. | No. of Combs. |
+|----------|----------|----------|
+| Single Op.    | [0], [1], [2], [3], [4],[5], [6], [7], [8], [9], [10]   | 11   |
+| Two Ops.    |  [1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]   | 6   | 
+| Three Ops. | [1, 2, 3], [1, 2, 4], [1, 3, 2], [1, 3, 4], [2, 1, 3], [2, 3, 1], [2, 3, 4], [3, 1, 2], [3, 2, 1] | 9
+| Four Ops.  | [1, 2, 3, 4], [1, 3, 2, 4], [3, 1, 4, 2], [4, 2, 3, 1], [4, 3, 2, 1], [7, 6, 8, 5] | 6
 
 ## Expected Results
-We provide a Jupyter notebook, “Plot_Results.ipynb” for aggregating and visualizing the evaluation results.Visualizing Expected Results. Running all cells in the notebook without any modifications will generate the expected
-results, displaying ROC curves similar to those in Figure 9.Visualizing Evaluation Results After Running Experiments. To visualize evaluation results after running the
-experiments, update the following code in the Jupyter notebook.
+We provide a Jupyter notebook, `Plot_Results.ipynb` for aggregating and visualizing the evaluation results. 
+### Visualizing Expected Results. 
+Running all cells in the notebook without any modifications will generate the expected results, displaying ROC curves similar to those in Figure 9 in the full paper.
+### Visualizing Evaluation Results.
+After Running Experiments. To visualize evaluation results after running the experiments, update the following code in the Jupyter notebook.
 ```Python
 In the third cell:if method == "CAMPrints" or method == "MWDCNN":
 # root_folder = "./Expected_Results/..."
 root_folder = "./Evaluation_Results"In the last cell:# for method in ["CAMPrints", "DRUNET", ...]:
 for method in ["CAMPrints", "MWDCNN"]:The code above reflects the necessary modifications.
 ```
-After
-making these changes, run all cells again to generate the
-updated plot, which will include results for both CAMPrints and the baseline model (MWDCNN). Note that we do not provide code for the two additional baselines, DRUNET and
-the Wiener method.
+After making these changes, run all cells again to generate the updated plot, which will include results for both CAMPrints and the baseline model (MWDCNN). Note that we do not provide code for the two additional baselines, DRUNET and the Wiener method.
 
 ## Citation
 If **_CAMPrints_** contributes to your work, we would appreciate a citation to our paper.
