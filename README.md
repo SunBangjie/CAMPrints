@@ -47,9 +47,11 @@ The complete list of combinations is provided in the following Table. The full e
 
 ## Expected Results
 We provide a Jupyter notebook, `Plot_Results.ipynb` for aggregating and visualizing the evaluation results. 
-### Visualizing Expected Results. 
+
+### Visualizing Expected Results
 Running all cells in the notebook without any modifications will generate the expected results, displaying ROC curves similar to those in Figure 9 in the full paper.
-### Visualizing Evaluation Results.
+
+### Visualizing Evaluation Results
 After Running Experiments. To visualize evaluation results after running the experiments, update the following code in the Jupyter notebook. 
 In the third cell:
 ```Python
