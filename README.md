@@ -26,6 +26,9 @@ Once you download the dataset `Dataset.zip`, please unzip and put the folder `Da
 ## Pre-trained Model
 You can access the pre-trained encoder model [here](https://drive.google.com/file/d/1o5huB8RoKGLe2jHWOD7xVAadBDy14F7q/view?usp=sharing). Please place the `encoder_final.pth` file in the directory `CAMPrints/camprints_sys/saved_models/`, together with two other pre-trained models.
 
+## Training
+We provide a script `scheduled_learner.py` to train the models. For more training details, please refer to our full paper.
+
 ## Evaluation
 We provide a script to run the experiments automatically. Use the following commands:
 ```Python
