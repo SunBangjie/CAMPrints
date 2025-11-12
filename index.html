@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CAMPrints Project Overview</title>
+    <style>
+      body {
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 2.5rem clamp(1rem, 6vw, 4rem) 3.5rem;
+        color: #0f172a;
+        background: #f8fafc;
+        line-height: 1.6;
+      }
+      header,
+      section,
+      footer {
+        max-width: 960px;
+        margin: 0 auto 2.5rem;
+      }
+      h1 {
+        margin: 0 0 0.5rem;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        color: #0b1120;
+      }
+      p.lead {
+        font-size: 1.05rem;
+        color: #334155;
+        margin-bottom: 1.25rem;
+      }
+      section {
+        background: #ffffff;
+        border-radius: 1rem;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+        padding: 1.75rem;
+      }
+      ul,
+      ol {
+        padding-left: 1.5rem;
+      }
+      a {
+        color: #0284c7;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      code {
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        background: #e2e8f0;
+        padding: 0.2rem 0.45rem;
+        border-radius: 0.4rem;
+        font-size: 0.95rem;
+      }
+      footer {
+        text-align: center;
+        color: #64748b;
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>CAMPrints Project Overview</h1>
+      <p class="lead">
+        CAMPrints is a hardware-noise driven camera attribution pipeline. This page summarizes the repository layout, main
+        workflows, and how to reproduce the reported results.
+      </p>
+      <p>
+        <strong>Repository:</strong>
+        <a href="https://github.com/SunBangjie/CAMPrints" target="_blank" rel="noopener">github.com/SunBangjie/CAMPrints</a>
+      </p>
+    </header>
+
+    <section>
+      <h2>Highlights</h2>
+      <ul>
+        <li><strong>camprints_sys/</strong> – PyTorch training & evaluation scripts for CAMPrints and PRNU baselines.</li>
+        <li><strong>model/, model_common/</strong> – denoisers, encoders, residual blocks, and utility layers.</li>
+        <li><strong>prnu/</strong> – reference PRNU extraction + matching utilities for hybrid scoring.</li>
+        <li><strong>Evaluation/, Expected_Results/</strong> – ROC plots, spreadsheets, and CSVs to validate results.</li>
+        <li><strong>Plot_Results.ipynb</strong> – visualization notebook for score distributions and ROC curves.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Quick Start</h2>
+      <ol>
+        <li>Install dependencies: <code>pip install -r CAMPrints/camprints_sys/requirements.txt</code>.</li>
+        <li>Download encoder & denoiser checkpoints into <code>camprints_sys/saved_models/</code>.</li>
+        <li>Prepare paired clean/attacked datasets following the documentation in <code>README.md</code>.</li>
+        <li>Run <code>python camprints_sys/batch_evaluation.py</code> to reproduce ROC curves and metrics.</li>
+      </ol>
+      <p>
+        The root <code>README.md</code> covers dataset layouts, optional PRNU baselines, and instructions for training vs. evaluation
+        modes. Consult it for detailed CLI flags.
+      </p>
+    </section>
+
+    <section>
+      <h2>Additional Resources</h2>
+      <ul>
+        <li>
+          <a href="https://arxiv.org/abs/2111.09878" target="_blank" rel="noopener">Original CAMPrints paper</a>
+        </li>
+        <li>
+          <a href="https://github.com/SunBangjie/CAMPrints/tree/main/Evaluation" target="_blank" rel="noopener">
+            Evaluation artifacts
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/SunBangjie/CAMPrints/tree/main/Expected_Results" target="_blank" rel="noopener">
+            Expected ROC/TPR statistics
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      Maintained by the CAMPrints team. Issues and pull requests are welcome!
+    </footer>
+  </body>
+</html>
